@@ -11,10 +11,9 @@
     <![endif]-->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.ie.css"/>
-    <![endif]-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""/>
 
     <title>ООО «ЛесТрансСервис» — Минск, Беларусь —</title>
 </head>
@@ -26,7 +25,7 @@
         <header>
             <h1>ЛесТрансСервис</h1>
 
-            <h2><a href="http://lesovoz.by">Lesovoz.by</a> — Минск, Беларусь</h2>
+            <h2><a href="https://lesovoz.by">Lesovoz.by</a> — Минск, Беларусь</h2>
             Перевозки лесоматериалов (брёвен, срубов) автомобильным транспортом
 
         <hr>
@@ -39,18 +38,23 @@
 
         <section id="main_content">
 
-    <pre><div id="map" class="map" style="height: 333px"></div>
+    <pre style="font-size: x-small"><div id="map" class="map" style="height: 333px"></div>
             <script src="../javascripts/leaflet.js"></script>
             <script>
                 var map = L.map('map').setView([53.94, 27.61], 11);
-                L.tileLayer('http://{s}.tile.cloudmade.com/bfb13ad7873344d2bb951ad91e619c0f/997/256/{z}/{x}/{y}.png', {
+                L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
                     maxZoom: 18,
-                    attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a>'
+                    attribution: '<a href="https://openstreetmap.org">OpenStreetMap</a>'
                 }).addTo(map);
-                L.circle([53.959832, 27.632133], 333, {
+                L.circle([53.959832, 27.632133], 233, {
                     color: 'green',
                     fillColor: '#0f0',
-                    fillOpacity: 0.2
+                    fillOpacity: 0.3
+                }).addTo(map).bindPopup("Мы ждём Вас тут!");
+                L.circle([53.959832, 27.632133], 433, {
+                    color: 'red',
+//                    fillColor: '#0f0',
+                    fillOpacity: 0.1
                 }).addTo(map).bindPopup("Мы ждём Вас тут!");
             </script>
     <table><tr><td>ООО «ЛесТрансСервис»
@@ -60,24 +64,28 @@
 «Бизнес-Центр Аквабел»
 район д. Боровая 1, офис 304
 
-тел./fax: +375 17 237-93-04
-тел.: +375 29 650-57-46
+тел.: ﻿‎+375 29 644-30-30
 <a href="mailto:ltsbel@mail.ru">ltsbel@mail.ru</a>
 
 УНП 191453533   ОКПО 379540885000
-р/с  3012088590016 в ЗАО «МТБанк»,
-ЦБУ №3,  код 117
-Адрес банка:  г.Минскул.Короля, 51</td><td>LesTransService Co.Ltd
+IBAN: BY42MTBK30120001093300068379
+BIC: MTBKBY22
+ в ЗАО «МТБанк»,
+ЦБУ №3, код 117
+Адрес банка:  г.Минск ул.Короля, 51</td>
+<td>
+LesTransService Co.Ltd
 
 Republic of Belarus
 223053 Minski raion, d.Borovaya 1-304
 
 EUR 3012088590016
 JSC "MTBank"  SWIFT: MTBKBY22
+
 Correspondent Account:  40  0886848100EUR
 Commerzbank AG60261 Frankfurt, Kaizerplatz,
 Frankfurt am Main, Germany, BLZ: 50040000
-SWIFTCOBADEFF</td></tr></table>
+SWIFT COBADEFF</td></tr></table>
 </pre>
 
 
@@ -87,21 +95,13 @@ SWIFTCOBADEFF</td></tr></table>
             ООО "ЛесТрансСервис" &nbsp;&nbsp; УНП РБ 191453533
         </footer>
 
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                        m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            ga('create', 'UA-45750071-1', 'lesovoz.github.io');
-            ga('send', 'pageview');
-        </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-45750071-1', 'auto'); ga('send', 'pageview');
+</script>
 
     </div>
 </div>
